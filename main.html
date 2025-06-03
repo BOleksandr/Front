@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Form</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 300px;
+            position: relative;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center; 
+            gap: 10px;  
+        }
+
+        .form-row label {
+            flex: 1; 
+        }
+
+        .form-row input {
+            flex: 3;
+            padding: 5px;
+
+        }
+
+        .form-container a {
+            text-decoration: none;
+        }
+
+        .form-container button {
+            background-color: #3FFF5A;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .error-box {
+            background-color: #FF6C55;
+            color: white;
+            padding: 4px;
+            border-radius: 4px;
+            white-space: pre-line;
+            font-size: 0.95em;
+        }
+
+        .form-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            z-index: 10;
+        }
+
+        button.loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm" class="form-container" action="#" method="post">
+        <img src="https://via.placeholder.com/300x120"  width="300x120">
+
+        <div id="errorBox" class="error-box" style="display: none;"></div>
+
+        <div class="form-row">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required> 
+        </div>
+        
+        <div class="form-row">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>  
+        </div>
+        
+        
+        <a href="#">Forgot your password?</a>
+        
+        <button type="submit">Submit</button>
+        
+        <div id="formOverlay" class="form-overlay" style="display: none;">
+            <i class="fas fa-spinner fa-spin fa-2x"></i>
+        </div>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
